@@ -1,0 +1,54 @@
+{
+  "name": "anttech-expo-webview-bridge",
+  "version": "0.1.0",
+  "description": "A small, typed bridge for talking between a react-native-webview and your Expo/React Native app — origin allowlisting, command schemas, rate limiting, and request/response handling included.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./web": {
+      "types": "./dist/web/bridgeClient.d.ts",
+      "default": "./dist/web/bridgeClient.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "web": [
+        "dist/web/bridgeClient.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "example"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "webview",
+    "bridge",
+    "react-native-webview"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.70",
+    "react-native-webview": ">=13"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "react-native": "^0.74.0",
+    "react-native-webview": "^13.8.0",
+    "typescript": "^5.4.0"
+  }
+}
